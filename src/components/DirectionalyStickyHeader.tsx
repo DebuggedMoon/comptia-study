@@ -2,13 +2,57 @@
 
 import { ROUTES } from "@/utils/Routes";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function DirectionalyStickyHeader() {
-	console.log("Header rendered!")
+
+	const [activeScrollClasses, setActiveScrollClasses] = useState("");
+	const lastScrollYPosition = useRef(window.scrollY);
+
+	console.log(activeScrollClasses)
+
+	const getScrollDepedentClasses = (): string => {
+
+		if (window.scrollY === lastScrollYPosition.current) {
+			return activeScrollClasses;
+		}
+
+		if (window.scrollY <= 10) {
+
+			return "bg-black text-white";
+		} else if (window.scrollY - lastScrollYPosition.current > 2) {
+
+			return "hidden";
+		}
+
+		return "";
+	}
+
+	useEffect(() => {
+		// TODO: Fix this shit. Maybe write a ScrollObserver and pass in a function
+		// 		 which sets the state similar dependent on logic like getScrollDepedentClasses
+
+		const updateScrollData = () => {
+
+			if (window.scrollY % 3 !== 0) {
+			 	return;
+			}
+
+			const currentScrollClasses = getScrollDepedentClasses();
+			lastScrollYPosition.current = window.scrollY;
+
+			if (currentScrollClasses !== activeScrollClasses) {
+				setActiveScrollClasses(currentScrollClasses);
+			}
+		}
+
+		window.addEventListener("scroll", updateScrollData)
+		return () => window.removeEventListener("scroll", updateScrollData);
+	});
 
 	return (
 		<header
-			className="flex justify-center items-center py-4 px-7"
+			className={`w-full fixed flex justify-center items-center py-4 px-7 ${activeScrollClasses}`}
 		>
 			<nav>
 				<ul
