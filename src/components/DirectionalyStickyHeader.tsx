@@ -4,10 +4,12 @@ import { ROUTES } from "@/utils/Routes";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+const initialStyling = "bg-black text-white";
+
 export default function DirectionalyStickyHeader() {
 
-	const [activeScrollClasses, setActiveScrollClasses] = useState("");
-	const lastScrollYPosition = useRef(window.scrollY);
+	const [activeScrollClasses, setActiveScrollClasses] = useState(initialStyling);
+	const lastScrollYPosition = useRef(-1);
 
 	console.log(activeScrollClasses)
 
@@ -19,7 +21,7 @@ export default function DirectionalyStickyHeader() {
 
 		if (window.scrollY <= 10) {
 
-			return "bg-black text-white";
+			return initialStyling;
 		} else if (window.scrollY - lastScrollYPosition.current > 2) {
 
 			return "hidden";
