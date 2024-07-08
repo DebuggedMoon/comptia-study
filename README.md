@@ -1,3 +1,13 @@
+<!--
+
+	Potential name for the project in the Future: * Compty *
+
+	Sounds cute and friendly, could have little computer creature as logo
+	and design branding behind that! :D
+
+-->
+
+
 <div id="introduction" align="center">
 	<h1>CompTIA A+ Study</h1>
 	<p>A little studying web app for CompTIA certification.</p>
