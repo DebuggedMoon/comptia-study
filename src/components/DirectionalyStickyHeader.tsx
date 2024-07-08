@@ -24,7 +24,7 @@ export default function DirectionalyStickyHeader() {
 			return initialStyling;
 		} else if (window.scrollY - lastScrollYPosition.current > 2) {
 
-			return "hidden";
+			return "invisible";
 		}
 
 		return "";
