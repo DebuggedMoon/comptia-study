@@ -17,10 +17,8 @@
 
 ## Features
 - [ ] Landing Page
-- [ ] Interactive Preview
-- [ ] Popular Skins Section
-- [ ] Item Market Page
-- [ ] Item Search
+- [ ] Pratice Page
+- [ ] Test Simulation
 - [ ] Authentication
 - [ ] User Dashboard
 - [ ] Admin Dashboard
