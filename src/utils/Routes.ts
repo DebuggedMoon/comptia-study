@@ -16,5 +16,9 @@ export const ROUTES: Route[] = [
 	{
 		label: "Practice",
 		path: "/practice"
+	},
+	{
+		label: "Add Question",
+		path: "/add-question"
 	}
 ];
