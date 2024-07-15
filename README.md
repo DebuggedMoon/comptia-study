@@ -62,6 +62,13 @@ I am still fairly new to NextJS, so my conventions may be off and not following 
  - NextJS Server actions and DB related files are in the `./src/services` directory
  - Components and their files follow the `PascalCase` naming convention
 
+### Database
+I use a ORM for connecting and interacting with our database and for testing on a local sqlite DB. The questions and answers are stored in this way to allow for more extendability.
+
+#### Diagrams
+
+![Entity Relationship Diagram](public/database-er-diagram-transparent.png)
+
 ### Technologies Used
 * Frontend
 	* React
