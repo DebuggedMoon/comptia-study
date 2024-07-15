@@ -13,7 +13,7 @@ datasource db {
   url      = "file:dev.db"
 }
 
-model MultibleChoiseQuesntion {
+model MultibleChoiseQuestion {
   id                     Int                     @id @default(autoincrement())
   body                   String
   hasSingleCorrectAnswer Boolean
@@ -25,5 +25,5 @@ model MultibleChoiseAnswer {
   body       String
   isCorrect  Boolean
   questionId Int
-  question   MultibleChoiseQuesntion @relation(fields: [questionId], references: [id])
+  question   MultibleChoiseQuestion @relation(fields: [questionId], references: [id])
 }
