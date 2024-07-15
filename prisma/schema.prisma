@@ -13,3 +13,17 @@ datasource db {
   url      = "file:dev.db"
 }
 
+model MultibleChoiseQuesntion {
+  id                     Int                     @id @default(autoincrement())
+  body                   String
+  hasSingleCorrectAnswer Boolean
+  answers                MultibleChoiseAnswer[]
+}
+
+model MultibleChoiseAnswer {
+  id         Int                     @id @default(autoincrement())
+  body       String
+  isCorrect  Boolean
+  questionId Int
+  question   MultibleChoiseQuesntion @relation(fields: [questionId], references: [id])
+}
