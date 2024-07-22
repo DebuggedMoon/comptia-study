@@ -9,34 +9,35 @@ export default async function createMultibleChoiseQuestion(formData: FormData) {
 
 	const rawQuestionData = {
 		question: formData.get("question"),
-		correctAnswer: formData.get("correctAnswer"),
+		answerCorrectness: formData.getAll("answerCorrectness"),
 		answers: formData.getAll("answer")
 	}
-
-	assert(
-		rawQuestionData.question && 
-		rawQuestionData.correctAnswer && 
-		rawQuestionData.answers.length, 
-		"Provided invalid form data"
-	);
+	
+	if (
+		rawQuestionData.question === null ||
+		rawQuestionData.answers.length === 0 ||
+		rawQuestionData.answerCorrectness.length === 0
+	) {
+		return {
+			error: "Provided invalid form data"
+		}
+	}
 
 	console.log("Creating question....")
 
 	prisma.multibleChoiseQuestion.create({
 		data: {
 			body: rawQuestionData.question.toString(),
-			hasSingleCorrectAnswer: true,
+			hasSingleCorrectAnswer: rawQuestionData.answerCorrectness.filter(
+				isCorrect => isCorrect === "on"
+			).length === 1,
 			answers: {
 				"createMany": {
 					data: [
-						{
-							body: rawQuestionData.correctAnswer.toString(),
-							isCorrect: true
-						},
 						...rawQuestionData.answers.map(
-							answer => ({
+							(answer, i) => ({
 								body: answer.toString(),
-								isCorrect: false
+								isCorrect: rawQuestionData.answerCorrectness[i] === "on"
 							})
 						)
 					]
