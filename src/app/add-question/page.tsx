@@ -21,31 +21,43 @@ export default function AddQuestion() {
 					type="text" 
 					className="border border-zinc-400 roundex px-3 h-10" 
 					placeholder="Question here" 
-				/>
-
-				<input 
-					name="correctAnswer" 
-					type="text" 
-					className="border border-zinc-300 roundex px-3 h-10" 
-					placeholder="Correct Answer here" 
+					required
 				/>
 				
 				{
 					new Array(answerAmount).fill("").map(
 						(_, i) => (
-							<input
+
+							<div
 								key={i}
-								name="answer" 
-								type="text" 
-								className="border border-zinc-300 roundex px-3 h-10" 
-								placeholder="Answer here" 
-							/>
+								className="flex border border-zinc-300 roundex h-10"
+							>
+
+								<input
+									name="answerCorrectness"
+									type="checkbox"
+									className="mx-4"
+								/>
+
+								<div
+									className="border-l-2 mr-2"
+								/>
+
+								<input
+									name="answer" 
+									type="text"
+									className="pl-2"
+									placeholder="Answer here" 
+								/>
+
+							</div>
+
 						)
 					)
 				}
 
 				<button 
-					type="submit" 
+					type="submit"
 					className="h-10 bg-black px-5 rounded text-white mt-5"
 				>Create Question</button>
 
