@@ -30,7 +30,7 @@ export default function AddQuestion() {
 
 							<div
 								key={i}
-								className="flex border border-zinc-300 roundex h-10"
+								className="flex border border-zinc-300 focus-within:border-2 focus-within:rounded focus-within:border-black roundex h-10 "
 							>
 
 								<input
@@ -46,7 +46,7 @@ export default function AddQuestion() {
 								<input
 									name="answer" 
 									type="text"
-									className="pl-2"
+									className="pl-2 focus:outline-none"
 									placeholder="Answer here" 
 								/>
 
