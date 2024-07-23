@@ -33,6 +33,14 @@
 - [ ] User Dashboard
 - [ ] Admin Dashboard
 
+### Practice Page
+Practice and study by doing different types of exercises.
+
+- [Multible Choise Question](#multible-choise-questions)
+
+#### Multible Choise Questions
+You are given a question and possible answers to that question. It is stated wheter there is more than one answer or not.
+
 ## Potential Features
 - [ ] Leaderboards
 - [ ] Chat / Study Room
