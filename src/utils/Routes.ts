@@ -18,6 +18,10 @@ export const ROUTES: Route[] = [
 		path: "/practice"
 	},
 	{
+		label: "Questions",
+		path: "/questions"
+	},
+	{
 		label: "Add Question",
 		path: "/questions/add-question"
 	}

@@ -27,7 +27,7 @@
 
 ## Features
 - [ ] Landing Page
-- [ ] Pratice Page
+- [ ] Practice Page
 - [ ] Test Simulation
 - [ ] Authentication
 - [ ] User Dashboard
