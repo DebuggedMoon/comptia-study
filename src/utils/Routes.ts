@@ -19,6 +19,6 @@ export const ROUTES: Route[] = [
 	},
 	{
 		label: "Add Question",
-		path: "/add-question"
+		path: "/questions/add-question"
 	}
 ];
