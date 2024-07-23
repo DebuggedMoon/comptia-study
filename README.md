@@ -33,6 +33,10 @@
 - [ ] User Dashboard
 - [ ] Admin Dashboard
 
+## Potential Features
+- [ ] Leaderboards
+- [ ] Chat / Study Room
+
 ## Deployment
 To run the project localy follow the steps described bellow
 ### Project Setup
