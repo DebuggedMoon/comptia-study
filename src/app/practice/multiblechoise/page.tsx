@@ -17,8 +17,8 @@ export default async function PracticeMultibleChoise() {
 	shuffleArrayInPlace(question.answers);
 
 	return (
-		<main className="flex flex-col min-h-screen p-24">
-			<h1 className="py-[10%] text-3xl text-center">{question.body}</h1>
+		<main className="flex flex-col min-h-screen max-h-screen p-24">
+			<h1 className="pb-24 pt-10 text-3xl text-center">{question.body}</h1>
 			<MultibleChoiseAnswerButton answers={question.answers} />
 		</main>
 	);
