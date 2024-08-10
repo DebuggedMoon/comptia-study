@@ -1,10 +1,10 @@
+import getRandomMultibleChoiseQuestions from "@/services/getRandomMultibleChoiseQuestions";
 import MultibleChoiseAnswerButton from "@/components/MultibleChoiseAnswerButton";
-import getMultibleChoiseQuestion from "@/services/getMultibleChoiseQuestion";
 import shuffleArrayInPlace from "@/utils/shuffleArray";
 
 export default async function PracticeMultibleChoise() {
 
-	const question = await getMultibleChoiseQuestion();
+	const question = await getRandomMultibleChoiseQuestions(1);
 
 	if (question === null) {
 		return (
@@ -14,12 +14,12 @@ export default async function PracticeMultibleChoise() {
 		)
 	}
 
-	shuffleArrayInPlace(question.answers);
+	shuffleArrayInPlace(question[0].answers);
 
 	return (
 		<main className="flex flex-col min-h-screen max-h-screen p-24">
-			<h1 className="pb-24 pt-10 text-3xl text-center">{question.body}</h1>
-			<MultibleChoiseAnswerButton answers={question.answers} />
+			<h1 className="pb-24 pt-10 text-3xl text-center">{question[0].body}</h1>
+			<MultibleChoiseAnswerButton answers={question[0].answers} />
 		</main>
 	);
 }
