@@ -9,7 +9,7 @@
 
 
 <div id="introduction" align="center">
-	<h1>CompTIA A+ Study</h1>
+	<h1>CompTIA Study</h1>
 	<p>A little studying web app for CompTIA certification.</p>
 </div>
 <p>
@@ -39,7 +39,7 @@ Practice and study by doing different types of exercises.
 - [Multible Choise Question](#multible-choise-questions)
 
 #### Multible Choise Questions
-You are given a question and possible answers to that question. It is stated wheter there is more than one answer or not.
+You are given set of questions and possible answers to that question. It is stated wheter there is more than one answer or not. There is a progress bar at the top of the page indicating how many questions are left.
 
 ## Potential Features
 - [ ] Leaderboards
@@ -75,7 +75,7 @@ I am still fairly new to NextJS, so my conventions may be off and not following 
  - Components and their files follow the `PascalCase` naming convention
 
 ### Database
-I use a ORM for connecting and interacting with our database and for testing on a local sqlite DB. The questions and answers are stored in this way to allow for more extendability.
+I use a ORM for connecting and interacting with our database and for testing on a local sqlite DB. The questions and answers are stored in this way to allow for more extendability. To achieve this the *Prisma* ORM is used.
 
 #### Diagrams
 
