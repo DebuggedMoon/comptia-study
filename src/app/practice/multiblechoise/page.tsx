@@ -19,7 +19,7 @@ export default async function PracticeMultibleChoise() {
 
 	return (
 		<main className="flex flex-col min-h-screen max-h-screen p-24">
-			<ModeProgressBar />
+			<ModeProgressBar progress={100} />
 			<h1 className="pb-24 pt-10 text-3xl text-center">{question[0].body}</h1>
 			<MultibleChoiseAnswerButton answers={question[0].answers} />
 		</main>
