@@ -13,7 +13,10 @@ export default function MultibleChoiseAnswerButton({ answers, onAnswer }: Compon
 
 	function onAnswerClick() {
 		setRevealAnswers(true);
-		setTimeout(onAnswer || (() => window.location.reload()), 1500)
+		setTimeout(() => {
+			setRevealAnswers(false);
+			(onAnswer || (() => window.location.reload()))();
+		}, 1500)
 	}
 
 	return (
