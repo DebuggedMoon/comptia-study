@@ -9,7 +9,7 @@ export default function ModeProgressBar({ progress }: ComponentParameters) {
 		<div className="flex justify-center w-full">
 			<div className="h-4 w-32 min-w-[250px] border rounded-xl">
 				<div
-					className={`bg-green-400 h-full rounded-xl`}
+					className={`bg-green-400 h-full rounded-xl transition-all`}
 					style={{
 						"width": `${progress}%`
 					}}
