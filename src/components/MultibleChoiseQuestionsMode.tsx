@@ -19,8 +19,9 @@ export default function PracticeMultibleChoise({ questions, numberOfQuestions }:
 	if (questionNumber === numberOfQuestions) {
 		return (
 			<main className="flex flex-col min-h-screen max-h-screen p-24">
-				<ModeProgressBar progress={questionNumber / numberOfQuestions * 100} />
+				<ModeProgressBar progress={100} />
 				<h1 className="pb-24 pt-10 text-3xl text-center">Finished!</h1>
+				<button>Practice Again</button>
 			</main>
 		);
 	}
