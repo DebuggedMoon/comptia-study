@@ -5,17 +5,17 @@ import { useState } from "react";
 
 type ComponentParams = {
 	answers: MultibleChoiseAnswer[],
-	onAnswer: () => any
+	onAnswer: (isCorrect: boolean) => any
 }
 
 export default function MultibleChoiseAnswerButton({ answers, onAnswer }: ComponentParams) {
 	const [revealAnswers, setRevealAnswers] = useState(false);
 
-	function onAnswerClick() {
+	function onAnswerClick(isCorrect: boolean) {
 		setRevealAnswers(true);
 		setTimeout(() => {
 			setRevealAnswers(false);
-			(onAnswer || (() => window.location.reload()))();
+			(onAnswer || (() => window.location.reload()))(isCorrect);
 		}, 1500)
 	}
 
@@ -27,7 +27,10 @@ export default function MultibleChoiseAnswerButton({ answers, onAnswer }: Compon
 					.map(
 						(answer) => (
 							<li key={answer.id} className="flex justify-center">
-								<button onClick={onAnswerClick} className={`border-2 ${revealAnswers ? (answer.isCorrect ? "border-green-500" : "border-red-500") : "border-gray-300 hover:border-gray-500"} rounded w-[75%] pl-6 py-2 text-left shadow-xl`}>{answer.body}</button>
+								<button
+									onClick={() => onAnswerClick(answer.isCorrect)}
+									className={`border-2 ${revealAnswers ? (answer.isCorrect ? "border-green-500" : "border-red-500") : "border-gray-300 hover:border-gray-500"} rounded w-[75%] pl-6 py-2 text-left shadow-xl`}
+								>{answer.body}</button>
 							</li>
 						)
 					)
