@@ -21,7 +21,14 @@ export default function PracticeMultibleChoise({ questions, numberOfQuestions }:
 			<main className="flex flex-col min-h-screen max-h-screen p-24">
 				<ModeProgressBar progress={100} />
 				<h1 className="pb-24 pt-10 text-3xl text-center">Finished!</h1>
-				<button>Practice Again</button>
+				<div className="flex justify-center mt-24">
+					<button
+						className="w-40 h-12 text-white bg-black rounded"
+						onClick={() => {
+							window.location.reload()	
+						}}
+					>Practice Again</button>
+				</div>
 			</main>
 		);
 	}
