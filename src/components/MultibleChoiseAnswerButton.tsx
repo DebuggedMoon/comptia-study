@@ -12,6 +12,10 @@ export default function MultibleChoiseAnswerButton({ answers, onAnswer }: Compon
 	const [revealAnswers, setRevealAnswers] = useState(false);
 
 	function onAnswerClick(isCorrect: boolean) {
+		if (revealAnswers === true) {
+			return;
+		}
+
 		setRevealAnswers(true);
 		setTimeout(() => {
 			setRevealAnswers(false);
