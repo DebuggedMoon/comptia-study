@@ -22,11 +22,11 @@ export default function ExpandableQuestionList({ questions }: ComponentParameter
 			questions.map(question => (
 				<li 
 					key={question.id}
-					className="border-2 rounded my-3 p-3"
+					className="border-2 rounded my-3 p-3 shadow-xl"
 				>
 					<p>{question.body}</p>
 					<button
-						className="border p-2"
+						className="border p-2 shadow"
 						onClick={() => {
 
 							if (question.id === expanededQuestionId) {
@@ -42,7 +42,7 @@ export default function ExpandableQuestionList({ questions }: ComponentParameter
 						<ul>
 							{
 								question.answers.map(answer => (
-									<li key={answer.id}>{answer.body}</li>
+									<li key={answer.id}>{answer.body}{answer.isCorrect ? "✔" : ""}</li>
 								))
 							}
 						</ul>
